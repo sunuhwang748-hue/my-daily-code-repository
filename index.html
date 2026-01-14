@@ -1,0 +1,36 @@
+<html>
+    <style>
+        body {
+            margin: 0;
+        }
+        #screen {
+            width : 100vw
+            height = 100vm
+        }
+    </style>
+    <body>
+        <h1>숫자 맞추기 게임</h1>
+        <p1>1부터 10까지의 숫자를 입력해보세요.</p1>
+        <input type="number" id="user-input" placeholder="여기에 숫자를 입력하세요">
+        <button onclick="checkValue()">확인</button>
+    </body>
+    <script>
+        let answer = Math.floor(Math.random() * 100)
+        function checkValue() {
+            const inputValue = document.querySelector('#user-input').value;
+            if (inputValue == answer) {
+                alert("정답입니다!")
+                
+            answer = Math.floor(Math.random() * 100);
+    
+            document.querySelector('#user-input').value = "";
+            }
+            else if (inputValue > answer) {
+                alert("down!")
+            }
+            else if (inputValue < answer) {
+                alert("up!")
+            }
+        }
+    </script>
+</html>
